@@ -20,8 +20,8 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/controller"
 	ctrl "sigs.k8s.io/controller-runtime"
 
+	pipeline "github.com/crossplane/provider-nativeproviderjenkins/internal/controller/Pipeline"
 	"github.com/crossplane/provider-nativeproviderjenkins/internal/controller/config"
-	"github.com/crossplane/provider-nativeproviderjenkins/internal/controller/mytype"
 )
 
 // Setup creates all NativeProviderJenkins controllers with the supplied logger and adds them to
@@ -29,7 +29,7 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		config.Setup,
-		mytype.Setup,
+		pipeline.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

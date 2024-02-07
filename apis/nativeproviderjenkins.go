@@ -20,7 +20,7 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	samplev1alpha1 "github.com/crossplane/provider-nativeproviderjenkins/apis/sample/v1alpha1"
+	pipeline "github.com/crossplane/provider-nativeproviderjenkins/apis/pipeline/v1alpha1"
 	nativeproviderjenkinsv1alpha1 "github.com/crossplane/provider-nativeproviderjenkins/apis/v1alpha1"
 )
 
@@ -28,7 +28,7 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		nativeproviderjenkinsv1alpha1.SchemeBuilder.AddToScheme,
-		samplev1alpha1.SchemeBuilder.AddToScheme,
+		pipeline.SchemeBuilder.AddToScheme,
 	)
 }
 
